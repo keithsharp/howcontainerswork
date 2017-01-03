@@ -4,7 +4,15 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
-int main(void) 
+/*
+ * To compile:
+ *		gcc -o fork-example fork-example.c
+ *
+ * To run:
+ *		./fork-example
+ */
+
+int main(void)
 {
 	pid_t pid;
 	int status;
@@ -20,8 +28,7 @@ int main(void)
 	} else { // Parent process
 		printf("PARENT: Process ID: %d\n", getpid());
 	}
-	
+
 	waitpid(pid, &status, 0); // Defeat Zombies!
 	exit(0);
 }
-
