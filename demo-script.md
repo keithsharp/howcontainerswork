@@ -99,4 +99,13 @@ cd ..
 ```
 
 ## RunC example
-Still need to do this!
+```
+cd runc-cli-example
+mkdir -p hello-world/rootfs
+cp ./hello ./hello-world
+cd hello-world
+runc spec
+vi config.json
+sudo /home/kms/sbin/runc run -b . hello-container
+cd ..
+```
